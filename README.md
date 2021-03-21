@@ -16,7 +16,7 @@
     cap = corr_mat["備轉容量(MW)"]
     cols_name = list(cap[mask1 | mask2].index)
 ```
-將關聯度太低的特徵排除。
+將關聯度太低的特徵排除並取得要拿來訓練的feature名稱。
 ### Training 
 接著使用sklearn之train_test_split和xgboost的XGBRegressor搭配做擬合，並以xgb.score輸出驗證集的評分，衡量model擬合完的效果。
 ```
