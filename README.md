@@ -8,7 +8,8 @@
 ### Data Analysis
 如hw1.ipynb所示，首先使用pandas.DataFrame.corr以得到各項feature與備轉電力相關的相關係數，因為column太多用heatmap太雜，所以後來就把輸出移掉。
 ### Feature Engineering
-參考了[相關係數之介紹](http://amebse.nchu.edu.tw/new_page_517.htm"相關係數之介紹")，了解到**r值於0～0.25或0～ -0.25，兩者缺乏相關**，所以用下列程式碼:
+參考了[相關係數之介紹](http://amebse.nchu.edu.tw/new_page_517.htm"相關係數之介紹")，了解到**r值於0～0.25或0～-0.25，兩者缺乏相關**，考量資料量太少，所以將條件再放寬些。
+最後用下列程式碼:
 ```
     mask1 = corr_mat["備轉容量(MW)"] > 0.2
     mask2 = corr_mat["備轉容量(MW)"] < -0.2
