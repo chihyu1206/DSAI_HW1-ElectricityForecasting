@@ -49,4 +49,4 @@ if __name__ == '__main__':
         for i in range(len(last7days)):
             print(date_param, predictions[i], sep=',', file=fp)
             date_param += 1
-    
+    fp.close()
